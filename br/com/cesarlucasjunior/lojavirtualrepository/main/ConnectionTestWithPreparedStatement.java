@@ -53,7 +53,8 @@ public class ConnectionTestWithPreparedStatement {
 		while(resultSet.next()) {
 			System.out.println("Um novo produto foi cadastrado com sucesso!");
 			System.out.println("ID do novo item: " + resultSet.getInt(1));
-		}		
+		}
+		//Returning the number of rows impacted with the query:
 		//System.out.println(prepareStatement.getUpdateCount() + " rows created.");
 	}
 	
