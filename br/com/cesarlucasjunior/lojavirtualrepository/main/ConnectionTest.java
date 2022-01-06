@@ -15,6 +15,7 @@ public class ConnectionTest {
 		try {
 			Connection connection = new ConnectionFactory().getConnectionDataBase();
 			System.out.println("Database connection established.");
+			setProductInDataBase(connection);
 			getResultDataBase(connection);
 			connection.close();
 			System.out.println("Database connection closed.");
@@ -37,5 +38,15 @@ public class ConnectionTest {
 			System.out.println("ID: " + id + " NOME: " + nome + " DESCRIÇÃO: " + descricao);
 			System.out.println("-------------------------");
 		}
-	} 
+	}
+	
+	public static void setProductInDataBase(Connection connection) throws SQLException {
+		Statement statement = connection.createStatement();
+		statement.execute("INSERT INTO PRODUTO (NOME, DESCRICAO) VALUES ('Teclado', 'Teclado Gamer')", Statement.RETURN_GENERATED_KEYS);
+		ResultSet resultSet = statement.getGeneratedKeys();
+		while(resultSet.next()) {
+			System.out.println("Um item foi cadastrado com sucesso!");
+			System.out.println("ID: " + resultSet.getInt(1));
+		}
+	}
 }
