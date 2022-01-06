@@ -54,7 +54,7 @@ public class ConnectionTestWithPreparedStatement {
 			System.out.println("Um novo produto foi cadastrado com sucesso!");
 			System.out.println("ID do novo item: " + resultSet.getInt(1));
 		}		
-//		System.out.println(prepareStatement.getUpdateCount() + " rows created.");
+		//System.out.println(prepareStatement.getUpdateCount() + " rows created.");
 	}
 	
 	public static void deleteProductInDataBase(Connection connection, Integer idParaDeletar) throws SQLException {
