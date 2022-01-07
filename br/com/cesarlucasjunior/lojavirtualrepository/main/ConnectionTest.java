@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import br.com.cesarlucasjunior.lojavirtualrepository.factory.ConnectionFactory;
+import br.com.cesarlucasjunior.lojavirtualrepository.factory.ConnectionFactoryOld;
 
 public class ConnectionTest {
 
@@ -13,7 +13,7 @@ public class ConnectionTest {
 		System.out.println("Trying to establish a database connection...");
 		
 		try {
-			Connection connection = new ConnectionFactory().getConnectionDataBase();
+			Connection connection = new ConnectionFactoryOld().getConnectionDataBase();
 			System.out.println("Database connection established.");
 			deleteProductInDataBase(connection);
 			setProductInDataBase(connection);
