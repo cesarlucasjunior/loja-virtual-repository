@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class ConnectionFactory {
-	
+
 	public DataSource dataSource;
 
 	public ConnectionFactory() {
@@ -19,7 +19,7 @@ public class ConnectionFactory {
 		
 		this.dataSource = comboPooled;
 	}
-	
+
 	public Connection getConnectionDataBase() throws SQLException {
 		return this.dataSource.getConnection();
 	}
