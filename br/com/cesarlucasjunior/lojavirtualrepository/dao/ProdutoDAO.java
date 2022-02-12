@@ -1,4 +1,4 @@
-package br.com.cesarlucasjunior.lojavirtualrepository.dto;
+package br.com.cesarlucasjunior.lojavirtualrepository.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
